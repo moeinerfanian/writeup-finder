@@ -57,16 +57,16 @@ def send_to_discord_webhook(webhook_url, message, embed=None):
         print("Failed to send message to Discord webhook.")
 
 def save_link_to_file(link):
-    with open('writeup-finder/found_links.txt', 'a') as file:
+    with open('found_links.txt', 'a') as file:
         file.write(link + '\n')
 
 def is_link_found(link):
-    with open('writeup-finder/found_links.txt', 'r') as file:
+    with open('found_links.txt', 'r') as file:
         found_links = file.readlines()
     return link + '\n' in found_links
 
 def main():
-    with open('writeup-finder/files/lists.txt', 'r') as file:  
+    with open('files/lists.txt', 'r') as file:  
         urls = file.readlines()  
     
     urls = [url.strip() for url in urls if url.strip()]
