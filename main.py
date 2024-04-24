@@ -76,7 +76,8 @@ class Items:
         self._pub_date = pub_date
 
 def fetch_data_from_url(url):
-    response = requests.get(url)
+    response = requests.get(url, headers = headers)
+    headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
     content_type = response.headers['Content-Type'].split(';')[0]
 
     if 'text/xml' in content_type:
